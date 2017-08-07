@@ -17,6 +17,8 @@ namespace SuperShadowrunWindows
         const long ORIGINAL_MUSIC_FILE_SIZE = 107277169;
         const long NEW_MUSIC_FILE_SIZE = 6648343;
 
+        const String MESSAGE_BOX_TITLE = "Shadowrun Music Replacer";
+
         const String CURRENT_MUSIC_FILE_PATH = "SRHK_Data\\resources.assets.resS";
         const String BACKUP_MUSIC_FILE_PATH = "SRHK_Data\\resources.assets.resS.original";
         const String ASSETS_FILE_PATH = "SRHK_Data\\resources.assets";
@@ -57,7 +59,7 @@ namespace SuperShadowrunWindows
             2004909292, //  Legwork-Museum
             2004909340, //  Sewer
             2004909396, //  Stealth-Matrix1
-            2004909542, //  Legwork-Gobbet
+            2004909452, //  Legwork-Gobbet
             2004909508, //  Legwork-Hacking
             2004909572, //  Combat-Grendel-WrapUp
             2004909632, //  KnightKingsElevator
@@ -89,11 +91,11 @@ namespace SuperShadowrunWindows
             1587765, // Combat-Gobbet-WrapUp
             2769352, // Legwork-Is0bel
             2335317, // Legwork-Erhu
-            4081956, // Legwork-Grendel
+            4081444, // Legwork-Grendel
             2137219, // Legwork-ExitStageLeft
-            23524,   //   TESTSTINGER
+            23524,   // TESTSTINGER
             1945118, // Hub-Club88-ThroughWalls
-            814336, //  Legwork-News
+            814336,  // Legwork-News
             2379468, // Combat-Boss
             1461548, // loudmusic
             2076444, // Legwork-Whistleblower
@@ -102,24 +104,24 @@ namespace SuperShadowrunWindows
             2456839, // Combat-Generic-Int1
             1946454, // Hub-Club88-InStreet
             4769042, // Legwork-Kowloon
-            174738,  //  Combat-stinger-end
+            174738,  // Combat-stinger-end
             1555961, // Combat-VictoriaHarbor-WrapUp
             2201641, // Combat-Grendel-Int1
             3824160, // Legwork-Museum
             1248268, // Sewer
             3632887, // Stealth-Matrix1
             3386416, // Legwork-Gobbet
-            97418,   //   Legwork-Hacking
+            1558692, // Legwork-Hacking
             2204970, // Combat-Grendel-WrapUp
-            1722703, // KnightKingsElevator
+            1722735, // KnightKingsElevator
             2772601, // Legwork-VictoriaHarbor
             2203038, // Combat-Grendel-Int2
             1561330, // Combat-Is0bel-WrapUp
             1556423, // Combat-VictoriaHarbor-Int1
-            98449,   //   Combat-stinger-start
+            98449,   // Combat-stinger-start
             1587496, // Combat-Gobbet-Int2
             1951388, // Club88-MainRoom
-            1555953  //Combat-VictoriaHarbor-Int2
+            1555953  // Combat-VictoriaHarbor-Int2
         };
 
         int[] ORIGINAL_POSITION_VALUES =
@@ -137,7 +139,7 @@ namespace SuperShadowrunWindows
             30762587,  //    Combat-Is0bel-Int2
             32324055,  //    Legwork-Generic
             35638962,  //    Combat-Kowloon-Int1
-            37642065,  //    Combat-Gobbet-WrapUp
+            37680465,  //    Combat-Gobbet-WrapUp
             39268230,  //    Legwork-Is0bel
             42037582,  //    Legwork-Erhu
             44372899,  //    Legwork-Grendel
@@ -145,7 +147,7 @@ namespace SuperShadowrunWindows
             50591562,  //    TESTSTINGER
             50615086,  //    Hub-Club88-ThroughWalls
             52560204,  //    Legwork-News
-            54423116,  //    Combat-Boss
+            53374540,  //    Combat-Boss
             55754008,  //    loudmusic
             57215556,  //    Legwork-Whistleblower
             59292000,  //    Combat-Is0bel-Int1
@@ -196,7 +198,54 @@ namespace SuperShadowrunWindows
 
         private void replaceButton_Click(object sender, EventArgs e)
         {
+            String currentMusicFilePath = path + CURRENT_MUSIC_FILE_PATH;
+            String backupMusicFilePath = path + BACKUP_MUSIC_FILE_PATH;
+            String assetsFilePath = path + ASSETS_FILE_PATH;
 
+            bool canSkipBackup = false;
+
+            System.IO.FileInfo backupInfo = new System.IO.FileInfo(backupMusicFilePath);
+            if (backupInfo.Exists && backupInfo.Length == ORIGINAL_MUSIC_FILE_SIZE)
+            {
+                canSkipBackup = true;
+            }
+
+            System.IO.FileInfo currentInfo = new System.IO.FileInfo(currentMusicFilePath);
+            if (!canSkipBackup)
+            {
+                if (currentInfo.Length != ORIGINAL_MUSIC_FILE_SIZE)
+                {
+                    MessageBox.Show("WARNING: The current music file size appears incorrect. Please correct by verifying the integrity of Shadowrun Hong Kong within Steam. Aborting.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
+                    return;
+                }
+                System.IO.File.Copy(currentMusicFilePath, backupMusicFilePath);
+            }
+
+            //            System.IO.File.Delete(currentMusicFilePath);
+
+            // TODO: Switch to using the new values once I have them.
+            writeArrays(assetsFilePath, ORIGINAL_SIZE_VALUES, ORIGINAL_POSITION_VALUES);
+
+            updateButtons();
+            MessageBox.Show("Conversion successful! The new music will now play for all campaigns, including the original.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
+        }
+
+        private void writeArrays(String filePath, int[] sizes, int[] positions)
+        {
+            // TODO: Error handling? 
+            System.IO.Stream stream = System.IO.File.Open(filePath, System.IO.FileMode.Open);
+            for (int i = 0; i < SIZE_OFFSETS.Length; ++i)
+            {
+                int offset = SIZE_OFFSETS[i];
+                int size = sizes[i];
+                int position = positions[i];
+                stream.Seek(offset, System.IO.SeekOrigin.Begin);
+                byte[] sizeBytes = BitConverter.GetBytes(size);
+                stream.Write(sizeBytes, 0, 4);
+                byte[] positionBytes = BitConverter.GetBytes(position);
+                stream.Write(positionBytes, 0, 4);
+            }
+            stream.Close();
         }
 
         private void updateButtons()
