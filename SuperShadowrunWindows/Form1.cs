@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SuperShadowrunWindows
@@ -175,6 +168,111 @@ namespace SuperShadowrunWindows
             105721216  //    Combat-VictoriaHarbor-Int2
         };
 
+        // The index into the new resources.assets.resS at which each track can be located. If using concat.py,
+        // these values can be taken from indices.txt. Pad out the array to 47 elements, you can safely reuse the
+        // same track multiple times. These do not necessarily need to be in ascending order.
+        int[] NEW_POSITION_VALUES =
+        {
+            0,
+            6943939,
+            13870374,
+            21041224,
+            28190205,
+            34785422,
+            42134005,
+            49636913,
+            57229798,
+            64338832,
+            70267594,
+            76169519,
+            83302189,
+            89192937,
+            95780483,
+            102093934,
+            109158343,
+            115258893,
+            122801168,
+            129112858,
+            137339673,
+            142449973,
+            145542310,
+            149849423,
+            152641825,
+            155852362,
+            161850414,
+            164993763,
+            169494987,
+            173443179,
+            176145112,
+            178103101,
+            179613562,
+            183456107,
+            186622425,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        };
+
+        int[] NEW_SIZE_VALUES =
+        {
+            6943939,
+            6926435,
+            7170850,
+            7148981,
+            6595217,
+            7348583,
+            7502908,
+            7592885,
+            7109034,
+            5928762,
+            5901925,
+            7132670,
+            5890748,
+            6587546,
+            6313451,
+            7064409,
+            6100550,
+            7542275,
+            6311690,
+            8226815,
+            5110300,
+            3092337,
+            4307113,
+            2792402,
+            3210537,
+            5998052,
+            3143349,
+            4501224,
+            3948192,
+            2701933,
+            1957989,
+            1510461,
+            3842545,
+            3166318,
+            1460540,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939,
+            6943939
+        };
+
         String path;
 
         public Form1()
@@ -221,13 +319,29 @@ namespace SuperShadowrunWindows
                 System.IO.File.Copy(currentMusicFilePath, backupMusicFilePath);
             }
 
-            //            System.IO.File.Delete(currentMusicFilePath);
+            System.IO.File.Delete(currentMusicFilePath);
+            CopyResource("SuperShadowrunWindows.Resources.03ShiftTheFields.ogg", currentMusicFilePath);
 
-            // TODO: Switch to using the new values once I have them.
-            writeArrays(assetsFilePath, ORIGINAL_SIZE_VALUES, ORIGINAL_POSITION_VALUES);
+            writeArrays(assetsFilePath, NEW_SIZE_VALUES, NEW_POSITION_VALUES);
 
             updateButtons();
             MessageBox.Show("Conversion successful! The new music will now play for all campaigns, including the original.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
+        }
+
+        private void CopyResource(string resourceName, string file)
+        {
+            using (System.IO.Stream resource = GetType().Assembly
+                                              .GetManifestResourceStream(resourceName))
+            {
+                if (resource == null)
+                {
+                    throw new ArgumentException("No such resource", "resourceName");
+                }
+                using (System.IO.Stream output = System.IO.File.OpenWrite(file))
+                {
+                    resource.CopyTo(output);
+                }
+            }
         }
 
         private void writeArrays(String filePath, int[] sizes, int[] positions)

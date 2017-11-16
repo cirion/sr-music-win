@@ -99,7 +99,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Shadowrun Hong Kong Music Switcher";
+            this.Text = "Shadowrun Hong Kong Music Switcher v0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
