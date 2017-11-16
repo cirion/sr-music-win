@@ -87,6 +87,7 @@
             this.restoreButton.TabIndex = 4;
             this.restoreButton.Text = "Restore Original Music";
             this.restoreButton.UseVisualStyleBackColor = true;
+            this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
             // 
             // Form1
             // 

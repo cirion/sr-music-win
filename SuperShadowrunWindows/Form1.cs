@@ -369,7 +369,42 @@ namespace SuperShadowrunWindows
             System.IO.FileInfo currentInfo = new System.IO.FileInfo(currentMusicFilePath);
             System.IO.FileInfo backupInfo = new System.IO.FileInfo(backupMusicFilePath);
             replaceButton.Enabled = currentInfo.Exists && currentInfo.Length == ORIGINAL_MUSIC_FILE_SIZE;
-            restoreButton.Enabled = backupInfo.Exists && currentInfo.Length == NEW_MUSIC_FILE_SIZE;
+            restoreButton.Enabled = backupInfo.Exists && currentInfo.Length != backupInfo.Length;
+        }
+
+        private void restoreButton_Click(object sender, EventArgs e)
+        {
+            String currentMusicFilePath = path + CURRENT_MUSIC_FILE_PATH;
+            String backupMusicFilePath = path + BACKUP_MUSIC_FILE_PATH;
+            String assetsFilePath = path + ASSETS_FILE_PATH;
+
+            bool canSkipBackup = false;
+
+            System.IO.FileInfo backupInfo = new System.IO.FileInfo(backupMusicFilePath);
+            if (backupInfo.Exists && backupInfo.Length == ORIGINAL_MUSIC_FILE_SIZE)
+            {
+                canSkipBackup = true;
+            }
+
+            System.IO.FileInfo currentInfo = new System.IO.FileInfo(currentMusicFilePath);
+            if (!canSkipBackup)
+            {
+                if (currentInfo.Length != ORIGINAL_MUSIC_FILE_SIZE)
+                {
+                    MessageBox.Show("WARNING: The current music file size appears incorrect. Please correct by verifying the integrity of Shadowrun Hong Kong within Steam. Aborting.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
+                    return;
+                }
+                System.IO.File.Copy(currentMusicFilePath, backupMusicFilePath);
+            }
+
+            System.IO.File.Delete(currentMusicFilePath);
+            System.IO.File.Copy(backupMusicFilePath, currentMusicFilePath);
+
+            writeArrays(assetsFilePath, ORIGINAL_SIZE_VALUES, ORIGINAL_POSITION_VALUES);
+
+            updateButtons();
+            MessageBox.Show("Restore successful! The original Hong Kong music will now play for all campaigns.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
+
         }
     }
 }
