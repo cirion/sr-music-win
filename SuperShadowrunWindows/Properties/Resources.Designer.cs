@@ -63,9 +63,9 @@ namespace SuperShadowrunWindows.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] _03ShiftTheFields {
+        public static byte[] resources_assets {
             get {
-                object obj = ResourceManager.GetObject("_03ShiftTheFields", resourceCulture);
+                object obj = ResourceManager.GetObject("resources_assets", resourceCulture);
                 return ((byte[])(obj));
             }
         }

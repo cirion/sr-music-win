@@ -174,104 +174,155 @@ namespace SuperShadowrunWindows
         int[] NEW_POSITION_VALUES =
         {
             0,
-            6943939,
-            13870374,
-            21041224,
-            28190205,
-            34785422,
-            42134005,
-            49636913,
-            57229798,
-            64338832,
-            70267594,
-            76169519,
-            83302189,
-            89192937,
-            95780483,
-            102093934,
-            109158343,
-            115258893,
-            122801168,
-            129112858,
-            137339673,
-            142449973,
-            145542310,
-            149849423,
-            152641825,
-            155852362,
-            161850414,
-            164993763,
-            169494987,
-            173443179,
-            176145112,
-            178103101,
-            179613562,
-            183456107,
-            186622425,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
+            1393879,
+            3014944,
+            4520349,
+            6075686,
+            13668571,
+            17303181,
+            24367590,
+            27995852,
+            31055213,
+            32447953,
+            36889850,
+            38220953,
+            39877464,
+            43415869,
+            48856076,
+            50721876,
+            53488518,
+            59418521,
+            61146277,
+            62529078,
+            65588545,
+            68476349,
+            70217186,
+            71530995,
+            74698790,
+            77936955,
+            79442993,
+            81311643,
+            82747291,
+            84164403,
+            85600051,
+            89110909,
+            90667844,
+            92222900,
+            95855684,
+            98880705,
+            101086977,
+            102449468,
+            105462420,
+            109263633,
+            111974559,
+            114047366,
+            115441245,
+            117222002,
+            118488723,
+            125637704
         };
 
         int[] NEW_SIZE_VALUES =
         {
-            6943939,
-            6926435,
-            7170850,
-            7148981,
-            6595217,
-            7348583,
-            7502908,
+            1393879,
+            1621065,
+            1505405,
+            1555337,
             7592885,
-            7109034,
-            5928762,
-            5901925,
-            7132670,
-            5890748,
-            6587546,
-            6313451,
+            3634610,
             7064409,
-            6100550,
-            7542275,
-            6311690,
-            8226815,
-            5110300,
-            3092337,
-            4307113,
-            2792402,
-            3210537,
-            5998052,
-            3143349,
-            4501224,
-            3948192,
-            2701933,
-            1957989,
-            1510461,
-            3842545,
-            3166318,
-            1460540,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939,
-            6943939
+            3628262,
+            3059361,
+            1392740,
+            4441897,
+            1331103,
+            1656511,
+            3538405,
+            5440207,
+            1865800,
+            2766642,
+            5930003,
+            1727756,
+            1382801,
+            3059467,
+            2887804,
+            1740837,
+            1313809,
+            3167795,
+            3238165,
+            1506038,
+            1868650,
+            1435648,
+            1417112,
+            1435648,
+            3510858,
+            1556935,
+            1555056,
+            3632784,
+            3025021,
+            2206272,
+            1362491,
+            3012952,
+            3801213,
+            2710926,
+            2072807,
+            1393879,
+            1780757,
+            1266721,
+            7148981,
+            6846089
         };
+
+        // Mapping info
+        /*
+Hub-TeaHouse              -> ../music/vlc_converted/track0.ogg
+Hub-Exterior              -> ../music/vlc_converted/track1.ogg
+Combat-Generic-Int2       -> ../music/vlc_converted/track3.ogg
+Legwork-SLinterior        -> ../music/vlc_converted/track5.ogg
+TitleTheme-UI             -> invocationarray_acff/08withme.ogg
+Combat-Matrix2            -> ../music/combat_matrix2.ogg
+Combat-Kowloon-Int2       -> invocationarray_op/16catalyst.ogg
+Combat-Gobbet-Int1        -> ../music/vlc_converted/track6.ogg
+Combat-Kowloon-WrapUp     -> ../music/vlc_converted/track7.ogg
+Hub-SafeHouse             -> ../music/vlc_converted/track9.ogg
+Combat-Is0bel-Int2        -> ../music/vlc_converted/track12.ogg
+Legwork-Generic           -> ../music/vlc_converted/track14.ogg
+Combat-Kowloon-Int1       -> ../music/vlc_converted/track16.ogg
+Combat-Gobbet-WrapUp      -> ../music/vlc_converted/track17.ogg
+Legwork-Is0bel            -> ../music/vlc_converted/track18.ogg
+Legwork-Erhu              -> ../music/vlc_converted/track22.ogg
+Legwork-Grendel           -> ../music/vlc_converted/track24.ogg
+Legwork-ExitStageLeft     -> ../music/vlc_converted/track26.ogg
+TESTSTINGER               -> ../music/vlc_converted/track27.ogg
+Hub-Club88-ThroughWalls   -> ../music/vlc_converted/track30.ogg
+Legwork-News              -> ../music/vlc_converted/track32.ogg
+Combat-Boss               -> ../music/vlc_converted/track33.ogg
+loudmusic                 -> ../music/vlc_converted/track34.ogg
+Legwork-Whistleblower     -> ../music/vlc_converted/track35.ogg
+Combat-Is0bel-Int1        -> ../music/vlc_converted/track36.ogg
+Combat-Generic-WrapUp     -> ../music/vlc_converted/track37.ogg
+Combat-Generic-Int1       -> ../music/vlc_converted/track38.ogg
+Hub-Club88-InStreet       -> ../music/vlc_converted/track39.ogg
+Legwork-Kowloon           -> ../music/vlc_converted/track41.ogg
+Combat-stinger-end        -> ../music/vlc_converted/track43.ogg
+Combat-VictoriaHarbor-WrapUp -> ../music/vlc_converted/track45.ogg
+Combat-Grendel-Int1       -> ../music/vlc_converted/track46.ogg
+Legwork-Museum            -> ../music/vlc_converted/track47.ogg
+Sewer                     -> ../music/vlc_converted/track48.ogg
+Stealth-Matrix1           -> ../music/stealth_matrix1.ogg
+Legwork-Gobbet            -> ../music/vlc_converted/track50.ogg
+Legwork-Hacking           -> ../music/vlc_converted/track51.ogg
+Combat-Grendel-WrapUp     -> ../music/vlc_converted/track53.ogg
+KnightKingsElevator       -> ../music/vlc_converted/track54.ogg
+Legwork-VictoriaHarbor    -> ../music/vlc_converted/track55.ogg
+Combat-Grendel-Int2       -> ../music/vlc_converted/track57.ogg
+Combat-Is0bel-WrapUp      -> ../music/vlc_converted/track58.ogg
+Combat-VictoriaHarbor-Int1 -> ../music/vlc_converted/track0.ogg
+Combat-stinger-start      -> ../music/vlc_converted/track59.ogg
+Combat-Gobbet-Int2        -> ../music/vlc_converted/track60.ogg
+Club88-MainRoom           -> invocationarray_acff/04siren.ogg
+Combat-VictoriaHarbor-Int2 -> invocationarray_op/06catalyst.ogg
+    */
 
         String path;
 
@@ -320,7 +371,8 @@ namespace SuperShadowrunWindows
             }
 
             System.IO.File.Delete(currentMusicFilePath);
-            CopyResource("SuperShadowrunWindows.Resources.03ShiftTheFields.ogg", currentMusicFilePath);
+//            CopyResource("SuperShadowrunWindows.Resources.03ShiftTheFields.ogg", currentMusicFilePath);
+            CopyResource("SuperShadowrunWindows.Resources.resources.assets.resS", currentMusicFilePath);
 
             writeArrays(assetsFilePath, NEW_SIZE_VALUES, NEW_POSITION_VALUES);
 
