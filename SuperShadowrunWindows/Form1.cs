@@ -173,104 +173,104 @@ namespace SuperShadowrunWindows
         // same track multiple times. These do not necessarily need to be in ascending order.
         int[] NEW_POSITION_VALUES =
         {
-            0,
-            1393879,
-            3014944,
-            4520349,
-            6075686,
-            13668571,
-            17303181,
-            24367590,
-            27995852,
-            31055213,
-            32447953,
-            36889850,
-            38220953,
-            39877464,
-            43415869,
-            48856076,
-            50721876,
-            53488518,
-            59418521,
-            61146277,
-            62529078,
-            65588545,
-            68476349,
-            70217186,
-            71530995,
-            74698790,
-            77936955,
-            79442993,
-            81311643,
-            82747291,
-            84164403,
-            85600051,
-            89110909,
-            90667844,
-            92222900,
-            95855684,
-            98880705,
-            101086977,
-            102449468,
-            105462420,
-            109263633,
-            111974559,
-            114047366,
-            115441245,
-            117222002,
-            118488723,
-            125637704
+0,
+1393879,
+3014944,
+4520349,
+6075686,
+13224667,
+16859277,
+23705366,
+27333628,
+30392989,
+31785729,
+36227626,
+37558729,
+39215240,
+42753645,
+48193852,
+50059652,
+52826294,
+58756297,
+60484053,
+61866854,
+64926321,
+67814125,
+69554962,
+70868771,
+74036566,
+77274731,
+78780769,
+80649419,
+82085067,
+83502179,
+84937827,
+88448685,
+90005620,
+91560676,
+95193460,
+98218481,
+99777211,
+101139702,
+103345974,
+106358926,
+110160139,
+112871065,
+114943872,
+116724629,
+117991350,
+125584235
         };
 
         int[] NEW_SIZE_VALUES =
         {
-            1393879,
-            1621065,
-            1505405,
-            1555337,
-            7592885,
-            3634610,
-            7064409,
-            3628262,
-            3059361,
-            1392740,
-            4441897,
-            1331103,
-            1656511,
-            3538405,
-            5440207,
-            1865800,
-            2766642,
-            5930003,
-            1727756,
-            1382801,
-            3059467,
-            2887804,
-            1740837,
-            1313809,
-            3167795,
-            3238165,
-            1506038,
-            1868650,
-            1435648,
-            1417112,
-            1435648,
-            3510858,
-            1556935,
-            1555056,
-            3632784,
-            3025021,
-            2206272,
-            1362491,
-            3012952,
-            3801213,
-            2710926,
-            2072807,
-            1393879,
-            1780757,
-            1266721,
-            7148981,
-            6846089
+1393879,
+1621065,
+1505405,
+1555337,
+7148981,
+3634610,
+6846089,
+3628262,
+3059361,
+1392740,
+4441897,
+1331103,
+1656511,
+3538405,
+5440207,
+1865800,
+2766642,
+5930003,
+1727756,
+1382801,
+3059467,
+2887804,
+1740837,
+1313809,
+3167795,
+3238165,
+1506038,
+1868650,
+1435648,
+1417112,
+1435648,
+3510858,
+1556935,
+1555056,
+3632784,
+3025021,
+1558730,
+1362491,
+2206272,
+3012952,
+3801213,
+2710926,
+2072807,
+1780757,
+1266721,
+7592885,
+7064409
         };
 
         // Mapping info
@@ -279,9 +279,9 @@ Hub-TeaHouse              -> ../music/vlc_converted/track0.ogg
 Hub-Exterior              -> ../music/vlc_converted/track1.ogg
 Combat-Generic-Int2       -> ../music/vlc_converted/track3.ogg
 Legwork-SLinterior        -> ../music/vlc_converted/track5.ogg
-TitleTheme-UI             -> invocationarray_acff/08withme.ogg
+TitleTheme-UI             -> invocationarray_acff/04siren.ogg
 Combat-Matrix2            -> ../music/combat_matrix2.ogg
-Combat-Kowloon-Int2       -> invocationarray_op/16catalyst.ogg
+Combat-Kowloon-Int2       -> invocationarray_op/06catalyst.ogg
 Combat-Gobbet-Int1        -> ../music/vlc_converted/track6.ogg
 Combat-Kowloon-WrapUp     -> ../music/vlc_converted/track7.ogg
 Hub-SafeHouse             -> ../music/vlc_converted/track9.ogg
@@ -311,17 +311,18 @@ Legwork-Museum            -> ../music/vlc_converted/track47.ogg
 Sewer                     -> ../music/vlc_converted/track48.ogg
 Stealth-Matrix1           -> ../music/stealth_matrix1.ogg
 Legwork-Gobbet            -> ../music/vlc_converted/track50.ogg
-Legwork-Hacking           -> ../music/vlc_converted/track51.ogg
+Legwork-Hacking           -> ../music/legwork_hacking.ogg
 Combat-Grendel-WrapUp     -> ../music/vlc_converted/track53.ogg
-KnightKingsElevator       -> ../music/vlc_converted/track54.ogg
-Legwork-VictoriaHarbor    -> ../music/vlc_converted/track55.ogg
-Combat-Grendel-Int2       -> ../music/vlc_converted/track57.ogg
-Combat-Is0bel-WrapUp      -> ../music/vlc_converted/track58.ogg
-Combat-VictoriaHarbor-Int1 -> ../music/vlc_converted/track0.ogg
+KnightKingsElevator       -> ../music/vlc_converted/track51.ogg
+Legwork-VictoriaHarbor    -> ../music/vlc_converted/track54.ogg
+Combat-Grendel-Int2       -> ../music/vlc_converted/track55.ogg
+Combat-Is0bel-WrapUp      -> ../music/vlc_converted/track57.ogg
+Combat-VictoriaHarbor-Int1 -> ../music/vlc_converted/track58.ogg
 Combat-stinger-start      -> ../music/vlc_converted/track59.ogg
 Combat-Gobbet-Int2        -> ../music/vlc_converted/track60.ogg
-Club88-MainRoom           -> invocationarray_acff/04siren.ogg
-Combat-VictoriaHarbor-Int2 -> invocationarray_op/06catalyst.ogg
+Club88-MainRoom           -> invocationarray_acff/08withme.ogg
+Combat-VictoriaHarbor-Int2 -> invocationarray_op/16catalyst.ogg
+
     */
 
         String path;
