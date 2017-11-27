@@ -204,22 +204,22 @@ namespace SuperShadowrunWindows
 80649419,
 82085067,
 83502179,
-84937827,
-88448685,
-90005620,
-91560676,
-95193460,
-98218481,
-99777211,
-101139702,
-103345974,
-106358926,
-110160139,
-112871065,
-114943872,
-116724629,
-117991350,
-125584235
+85835133,
+89345991,
+90902926,
+92457982,
+96090766,
+99115787,
+100674517,
+102037008,
+104243280,
+107256232,
+111057445,
+113768371,
+115841178,
+117621935,
+118888656,
+126481541
         };
 
         int[] NEW_SIZE_VALUES =
@@ -254,7 +254,7 @@ namespace SuperShadowrunWindows
 1868650,
 1435648,
 1417112,
-1435648,
+2332954,
 3510858,
 1556935,
 1555056,
@@ -305,7 +305,7 @@ Combat-Generic-Int1       -> ../music/vlc_converted/track38.ogg
 Hub-Club88-InStreet       -> ../music/vlc_converted/track39.ogg
 Legwork-Kowloon           -> ../music/vlc_converted/track41.ogg
 Combat-stinger-end        -> ../music/vlc_converted/track43.ogg
-Combat-VictoriaHarbor-WrapUp -> ../music/vlc_converted/track45.ogg
+Combat-VictoriaHarbor-WrapUp -> ../music/vlc_converted/track49.ogg
 Combat-Grendel-Int1       -> ../music/vlc_converted/track46.ogg
 Legwork-Museum            -> ../music/vlc_converted/track47.ogg
 Sewer                     -> ../music/vlc_converted/track48.ogg
