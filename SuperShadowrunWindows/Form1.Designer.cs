@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -41,9 +42,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 13);
+            this.label1.Size = new System.Drawing.Size(408, 52);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Navigate to Shadowrun Hong Kong install location.";
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // openFileDialog1
             // 
@@ -54,14 +55,14 @@
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(13, 30);
+            this.textBox1.Location = new System.Drawing.Point(13, 81);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
             // 
             // browseButton
             // 
-            this.browseButton.Location = new System.Drawing.Point(120, 30);
+            this.browseButton.Location = new System.Drawing.Point(120, 81);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(75, 23);
             this.browseButton.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             // replaceButton
             // 
-            this.replaceButton.Location = new System.Drawing.Point(13, 57);
+            this.replaceButton.Location = new System.Drawing.Point(13, 108);
             this.replaceButton.Name = "replaceButton";
             this.replaceButton.Size = new System.Drawing.Size(75, 23);
             this.replaceButton.TabIndex = 3;
@@ -81,7 +82,7 @@
             // 
             // restoreButton
             // 
-            this.restoreButton.Location = new System.Drawing.Point(13, 87);
+            this.restoreButton.Location = new System.Drawing.Point(13, 138);
             this.restoreButton.Name = "restoreButton";
             this.restoreButton.Size = new System.Drawing.Size(75, 23);
             this.restoreButton.TabIndex = 4;
@@ -93,14 +94,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 342);
+            this.ClientSize = new System.Drawing.Size(431, 177);
             this.Controls.Add(this.restoreButton);
             this.Controls.Add(this.replaceButton);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Shadowrun Hong Kong Music Switcher v0.1";
+            this.Text = "Shadowrun Hong Kong Music Replacer v0.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 

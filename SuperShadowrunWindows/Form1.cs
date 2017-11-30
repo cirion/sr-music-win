@@ -450,14 +450,20 @@ Combat-VictoriaHarbor-Int2 -> invocationarray_op/16catalyst.ogg
                 System.IO.File.Copy(currentMusicFilePath, backupMusicFilePath);
             }
 
-            System.IO.File.Delete(currentMusicFilePath);
-            System.IO.File.Copy(backupMusicFilePath, currentMusicFilePath);
+            try {
+                System.IO.File.Delete(currentMusicFilePath);
+            } catch (System.IO.IOException ioe) {
+                MessageBox.Show("ERROR: Could not replace music file. Please exit Shadowrun Hong Kong if it is running and try again. If this problem persists, try rebooting your computer.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
+                return;
+            }
 
+            System.IO.File.Copy(backupMusicFilePath, currentMusicFilePath);
             writeArrays(assetsFilePath, ORIGINAL_SIZE_VALUES, ORIGINAL_POSITION_VALUES);
 
             updateButtons();
             MessageBox.Show("Restore successful! The original Hong Kong music will now play for all campaigns.", MESSAGE_BOX_TITLE, MessageBoxButtons.OK);
 
         }
+
     }
 }
