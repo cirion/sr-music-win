@@ -121,7 +121,7 @@
     <value>1. Click Browse and select SRHK. Browse to your Steam install location if necessary.
 2. Click Replace to change the music.
 3. Launch Shadowrun Hong Kong and play CalFree in Chains.
-4. Once you are done with the campaign, click Restore to return to the original music.</value>
+4. After you finish the campaign, click Restore to return to the original music.</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
