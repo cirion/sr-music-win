@@ -7,7 +7,6 @@ namespace SuperShadowrunWindows
     {
 
         const long ORIGINAL_MUSIC_FILE_SIZE = 107277169;
-        const long NEW_MUSIC_FILE_SIZE = 6648343;
 
         const String MESSAGE_BOX_TITLE = "Shadowrun Music Replacer";
 
