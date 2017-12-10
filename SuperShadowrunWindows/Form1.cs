@@ -368,8 +368,7 @@ namespace SuperShadowrunWindows
                 System.IO.File.Copy(currentMusicFilePath, backupMusicFilePath);
             }
 
-            System.IO.File.Delete(currentMusicFilePath);
-            CopyResource("SuperShadowrunWindows.Resources.resources.assets.resS", currentMusicFilePath);
+            CopyResource("ShadowrunMusicReplacer.Resources.resources.assets.resS", currentMusicFilePath);
 
             writeArrays(assetsFilePath, NEW_SIZE_VALUES, NEW_POSITION_VALUES);
 
@@ -386,7 +385,7 @@ namespace SuperShadowrunWindows
                 {
                     throw new ArgumentException("No such resource", "resourceName");
                 }
-                using (System.IO.Stream output = System.IO.File.OpenWrite(file))
+                using (System.IO.Stream output = System.IO.File.Open(file, System.IO.FileMode.Create, System.IO.FileAccess.Write, System.IO.FileShare.Read))
                 {
                     resource.CopyTo(output);
                 }
